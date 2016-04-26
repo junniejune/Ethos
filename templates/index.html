@@ -1,27 +1,74 @@
 <html>
 <body>
+
+
+
+<link type="text/css" rel="stylesheet" href="https://github.com/kothuri2/Ethos/stylesheet2.css"/>
+<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<script type="text/javascript" src="https://github.com/kothuri2/Ethos/javascript.js"></script>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Car Model</a>{{Model}}
+  <a href="#">2015 Rank</a>{{Rank}}
+  <a href="#">Plant1</a>{{Plant_1_location}}
+  <a href="#">Plant2</a>{{Plant_2_location}}
+  <a href="#">Plant3</a>{{Plant_3_location}}
+  <a href="#">Plant4</a>{{Plant_4_location}}
+  <a href="#">Plant5</a>{{Plant_5_location}}
+</div>
+
+<div id="main">
+
+<!-- Use any element to open the sidenav -->
+	<span text-align="center" style="font-size:30px;cursor:pointer;font-color:white" onclick="openNav()"><img src="http://i.imgur.com/OsmBSQP.png" width="30px"></span>
+
+<div id="header" align="center">
+<img src="http://i.imgur.com/UU9UMlu.gif" width="1000">
+</div>
+
+<div id="search">
 <form action="http://127.0.0.1:8081/process_post" method="POST">
-Model: <input type="text" name="model">
-<input type="submit" value="Submit">
+	<div class="search-container">
+	  <div class="search-box">
+	    <div class="search-icon"><i class="fa fa-search"></i></div>
+	    <input id="search" type="text" name="model" placeholder="Search Model" class="search-input"/>
+	    <ul id="results" class="search-results"></ul>
+	  </div>
+	</div>
 </form>
+</div>
 
-<p>
-	<ul>
-		<li>Car Model: {{Model}}</li>
-		<li>2015 Rank: {{Rank}}</li>
-		<li>Plant 1 Location: {{Plant_1_location}}</li>
-		<li>Plant 2 Location: {{Plant_2_location}}</li>
-		<li>Plant 3 Location: {{Plant_3_location}}</li>
-		<li>Plant 4 Location: {{Plant_4_location}}</li>
-		<li>Plant 5 Location: {{Plant_5_location}}</li>
-	</ul>
-</p>
+<div id="globe-list">
 
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDFY0jZb_CTePH4uVluwaVjO0dqxSSNI4A"></script>
-<h2>{{Model2}} FootPrint</h2>
+	
+	<!--
+	<div id="result-list">
+	Model Name
+	</div
+	>-->
 
-<div id="googleMap" style="width:500px;height:380px;"></div>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDFY0jZb_CTePH4uVluwaVjO0dqxSSNI4A"></script>
+	<!--<h2>Car Model FootPrint</h2>-->
+	<div id="googleMap" align="center" style="width:auto;height:800px;"></div>
+</div>
+
+<!--
+<div id="graph">
+graph here
+</div>
+-->
+
+</div>
+
+<div id="footer">
+ 	<p class="credit">Made by Ethos Team | Source code on Github</p>
+</div>
+
 </body>
+
 
 <script>
 

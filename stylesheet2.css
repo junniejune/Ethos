@@ -1,0 +1,257 @@
+body {
+  background-color: black;
+  font-family: "Roboto", Arial, sans-serif;
+  font-color: white;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+#header {
+    float:center;
+    padding:0px;
+	
+}
+#search {
+    float:center;
+    padding:0px; 
+    text-align:center;
+    margin-bottom: 50px;
+    
+}
+#globe-list{
+	
+	padding: 5px;
+}
+
+#graph {
+    background-color:black;
+    color:white;
+    clear:both;
+    float:center;
+    padding:10px; 
+    text-align:center;
+}
+
+#result-list {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  margin: 10px;
+  background-color:black;
+}
+
+#googleMap {
+  width: 100%;
+  float:center;
+  text-align:center;
+  z-index: 10;
+}
+
+#footer {
+	position: relative;
+	height: 200px;
+	text-align: right;
+	color: white;
+}
+
+.credit {
+	position:absolute;
+    bottom:0;
+    right:10px;
+}
+
+
+/* ============================ */
+/* VARIABLES                    */
+/* ============================ */
+/* ============================ */
+/* SEARCH BAR                   */
+/* ============================ */
+
+.search-container {
+  margin: 30px auto;
+  width: 800px;
+}
+
+.search-box {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+  height: 40px;
+  position: relative;
+}
+
+.search-icon {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 32px;
+  height: 40px;
+  color: #292929;
+  font-size: 1.3em;
+  padding: 10px 15px;
+}
+
+.search-input {
+  font-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 768px;
+  height: 40px;
+  float: center;
+  background-color: transparent;
+  border: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 1em;
+  position: relative;
+  outline: 0px;
+}
+
+@-webkit-keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1.334em) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-1.334em) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1.334em) translateZ(0);
+    -moz-transform: translateY(-1.334em) translateZ(0);
+    -ms-transform: translateY(-1.334em) translateZ(0);
+    -o-transform: translateY(-1.334em) translateZ(0);
+    transform: translateY(-1.334em) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 999;
+  width: 368px;
+  max-height: 200px;
+  overflow: scroll;
+  top: 40px;
+  left: 32px;
+  text-align: left;
+}
+.search-results li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 40px;
+  background-color: #9BC788;
+  color: white;
+  font-weight: bold;
+  /* ANIMATION */
+  /* remove this part if you dont like the animation */
+  /* END OF ANIMATION */
+}
+.search-results li:hover {
+  background-color: #87bc70;
+  cursor: pointer;
+}
+.search-results li:nth-child(1) {
+  /* Animation */
+  -webkit-animation: fadeInTop 0.4s 0s forwards;
+  animation: fadeInTop 0.4s 0s forwards;
+  opacity: 0;
+}
+.search-results li:nth-child(2) {
+  /* Animation */
+  -webkit-animation: fadeInTop 0.4s 0.1s forwards;
+  animation: fadeInTop 0.4s 0.1s forwards;
+  opacity: 0;
+}
+.search-results li:nth-child(3) {
+  /* Animation */
+  -webkit-animation: fadeInTop 0.4s 0.2s forwards;
+  animation: fadeInTop 0.4s 0.2s forwards;
+  opacity: 0;
+}
+.search-results li:nth-child(4) {
+  /* Animation */
+  -webkit-animation: fadeInTop 0.4s 0.3s forwards;
+  animation: fadeInTop 0.4s 0.3s forwards;
+  opacity: 0;
+}
+.search-results li:nth-child(5) {
+  /* Animation */
+  -webkit-animation: fadeInTop 0.4s 0.4s forwards;
+  animation: fadeInTop 0.4s 0.4s forwards;
+  opacity: 0;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
