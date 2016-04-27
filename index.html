@@ -1,16 +1,195 @@
 <html>
 <body>
-<form action="http://127.0.0.1:8081/process_post" method="POST">
-Model: <input type="text" name="model">
-<input type="submit" value="Submit">
-</form>
 
-<p>
-	<ul>
-		<li>Car Model: {{Model}}</li>
-		<li>2015 Rank: {{Rank}}</li>
-		<li>Plant 1 Location: {{Plant_1_location}}</li>
-	</ul>
-</p>
+
+
+<link type="text/css" rel="stylesheet" href="https://github.com/kothuri2/Ethos/stylesheet2.css"/>
+<link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<script type="text/javascript" src="https://github.com/kothuri2/Ethos/javascript.js"></script>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Car Model</a>
+  <a href="#">2015 Rank</a>
+  <a href="#">Plant1</a>
+  <a href="#">Plant2</a>
+</div>
+
+<div id="main">
+
+<!-- Use any element to open the sidenav -->
+	<span text-align="center" style="font-size:30px;cursor:pointer;font-color:white" onclick="openNav()"><img src="http://i.imgur.com/OsmBSQP.png" width="30px"></span>
+
+<div id="header" align="center">
+<img src="http://i.imgur.com/UU9UMlu.gif" width="1000">
+</div>
+
+<div id="search">
+<form action="http://127.0.0.1:8081/process_post" method="POST">
+	<div class="search-container">
+	  <div class="search-box">
+	    <div class="search-icon"><i class="fa fa-search"></i></div>
+	    <input id="search" type="text" name="model" placeholder="Search Model" class="search-input"/>
+	    <ul id="results" class="search-results"></ul>
+	  </div>
+	</div>
+</form>
+</div>
+
+<div id="globe-list">
+
+	
+	<!--
+	<div id="result-list">
+	Model Name
+	</div
+	>-->
+
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDFY0jZb_CTePH4uVluwaVjO0dqxSSNI4A"></script>
+	<!--<h2>Car Model FootPrint</h2>-->
+	<div id="googleMap" align="center" style="width:auto;height:800px;"></div>
+</div>
+
+<!--
+<div id="graph">
+graph here
+</div>
+-->
+
+</div>
+
+<div id="footer">
+ 	<p class="credit">Made by Ethos Team | Source code on Github</p>
+</div>
+
 </body>
+
+
+<script>
+
+function initialize()
+{
+	var mapProp = {
+	    center:new google.maps.LatLng(34.7857323,134.3756902),  
+	    zoom:1,
+	    mapTypeId:google.maps.MapTypeId.ROADMAP
+  	};
+  	var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+  	  //marker1
+	  var myCenter1=new google.maps.LatLng();
+	  var marker1=new google.maps.Marker({
+	  position:myCenter1,
+	  animation:google.maps.Animation.BOUNCE
+	  });
+
+	  var location_1 =  "";
+	  var info_1 = "";
+
+	 var content1 = '<div id="plant1">' +
+	                  '<div class="plant1_company">' +  info_1 + '</div>' +'<div class="split">Location:</div>'+
+	                  '<div class="plant1_location">' + location_1 + '</div>' + '</div>';
+	  marker1.setMap(map);
+	  var infowindow1 = new google.maps.InfoWindow({
+	  content:content1
+	  });
+
+	  google.maps.event.addListener(marker1, 'click', function() {
+	  infowindow1.open(map,marker1);
+	  });
+
+	  //marker2
+	  var myCenter2=new google.maps.LatLng();
+	  var marker2=new google.maps.Marker({
+	  position:myCenter2,
+	  animation:google.maps.Animation.BOUNCE
+	  });
+
+	  var location_2 =  "";
+	  var info_2 = "";
+
+	 var content2 = '<div id="plant1">' +
+	                  '<div class="plant1_company">' + info_2 + '</div>' +'<div class="split">Location:</div>'+
+	                  '<div class="plant1_location">' + location_2 + '</div>' + '</div>';
+	  marker2.setMap(map);
+	  var infowindow2 = new google.maps.InfoWindow({
+	  content:content2
+	  });
+
+	  google.maps.event.addListener(marker2, 'click', function() {
+	  infowindow2.open(map,marker2);
+	  });
+
+	  //marker3
+	  var myCenter3=new google.maps.LatLng();
+	  var marker3=new google.maps.Marker({
+	  position:myCenter3,
+	  animation:google.maps.Animation.BOUNCE
+	  });
+
+	  var location_3 =  "";
+	  var info_3 = "";
+
+	 var content3 = '<div id="plant1">' +
+	                  '<div class="plant1_company">' + info_3 + '</div>' +'<div class="split">Location:</div>'+
+	                  '<div class="plant1_location">' + location_3 + '</div>' + '</div>';
+	  marker3.setMap(map);
+	  var infowindow3 = new google.maps.InfoWindow({
+	  content:content3
+	  });
+
+	  google.maps.event.addListener(marker3, 'click', function() {
+	  infowindow3.open(map,marker3);
+	  });
+
+	  //marker4
+	  var myCenter4=new google.maps.LatLng();
+	  var marker4=new google.maps.Marker({
+	  position:myCenter4,
+	  animation:google.maps.Animation.BOUNCE
+	  });
+
+	  var location_4 =  "";
+	  var info_4 = "";
+
+	 var content4 = '<div id="plant1">' +
+	                  '<div class="plant1_company">' + info_4 + '</div>' +'<div class="split">Location:</div>'+
+	                  '<div class="plant1_location">' + location_4 + '</div>' + '</div>';
+	  marker4.setMap(map);
+	  var infowindow4 = new google.maps.InfoWindow({
+	  content:content4
+	  });
+
+	  google.maps.event.addListener(marker4, 'click', function() {
+	  infowindow4.open(map,marker4);
+	  });
+
+	  //marker5
+	  var myCenter5=new google.maps.LatLng();
+	  var marker5=new google.maps.Marker({
+	  position:myCenter5,
+	  animation:google.maps.Animation.BOUNCE
+	  });
+
+	  var location_5 =  "";
+	  var info_5 = "";
+
+	 var content5 = '<div id="plant1">' +
+	                  '<div class="plant1_company">' + info_5 + '</div>' +'<div class="split">Location:</div>'+
+	                  '<div class="plant1_location">' + location_5 + '</div>' + '</div>';
+	  marker5.setMap(map);
+	  var infowindow5 = new google.maps.InfoWindow({
+	  content:content5
+	  });
+
+	  google.maps.event.addListener(marker5, 'click', function() {
+	  infowindow5.open(map,marker5);
+	  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
 </html>
