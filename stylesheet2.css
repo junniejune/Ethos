@@ -240,7 +240,11 @@ body {
     top: 0;
     right: 25px;
     font-size: 36px !important;
+<<<<<<< HEAD
     margin-left: 80px;
+=======
+    margin-left: 50px;
+>>>>>>> kothuri2/master
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -255,6 +259,7 @@ body {
     .sidenav a {font-size: 18px;}
 }
 
+<<<<<<< HEAD
 
 #menu {
     list-style: none;
@@ -335,3 +340,5 @@ body {
     font-size:15px;
 }
 
+=======
+>>>>>>> kothuri2/master
